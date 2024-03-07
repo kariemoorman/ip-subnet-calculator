@@ -118,9 +118,9 @@ class IPv4Address:
         # Calculate broadcast network
         broadcast_address = self.get_broadcast_address(subnet_mask)
         # Calculate binary 
-        binary_ip_address = ''.join(format(octet, '08b') for octet in ip_octets)
-        binary_subnet_mask = ''.join(format(octet, '08b') for octet in subnet_octets)
-        binary_network_address = ''.join(format(octet, '08b') for octet in network_octets)
+        binary_ip_address = '.'.join('.'.join([binary_octet[i:i+8] for i in range(0, len(binary_octet), 8)]) for binary_octet in [format(int(octet), '08b') for octet in ip_octets])
+        binary_subnet_mask = '.'.join('.'.join([binary_octet[i:i+8] for i in range(0, len(binary_octet), 8)]) for binary_octet in [format(int(octet), '08b') for octet in subnet_octets])
+        binary_network_address = '.'.join('.'.join([binary_octet[i:i+8] for i in range(0, len(binary_octet), 8)]) for binary_octet in [format(int(octet), '08b') for octet in network_octets])
         # Return network_address
         print(f"\nIPv4 Address: \t\t {self.ip_address}")
         print(f"IP Class: \t\t {classification['IP Class']}")
