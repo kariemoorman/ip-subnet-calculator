@@ -1,11 +1,23 @@
 # IP-Subnet-Calculator
+
+<br>
+
+![GitHub last commit](https://img.shields.io/github/last-commit/kariemoorman/IP-Subnet-Calculator)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kariemoorman/IP-Subnet-Calculator)
+![GitHub stars](https://img.shields.io/github/stars/kariemoorman/IP-Subnet-Calculator?style=social)
+
+---
+
+### 🛡️ About
+
 IP Subnet Calculator returns a variety of information regarding Internet Protocol version 4 (IPv4) networks (e.g., IP class and type, CIDR notation, subnet mask, network address and broadcast address). 
 
-<hl> 
+---
 
-### Examples 
+### 🌟 Examples 
 
-- IPv4 Address & Subnet Mask 
+### IPv4 
+- #### IPv4 Address & Subnet Mask 
 
 ```
 ## Input Values
@@ -25,7 +37,7 @@ Network Address: 192.168.104.0
 Broadcast Address: 192.168.111.255
 ```
 
-- IPv4 Address & CIDR
+- #### IPv4 Address & CIDR
 
 ```
 ## Input Values
