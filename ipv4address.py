@@ -1,9 +1,42 @@
 import argparse
+import re
 
 class IPv4Address:
     def __init__(self, ipv4_address): 
-        self.ip_address = ipv4_address
-    
+        if not self.is_valid_ip(ipv4_address):
+            raise ValueError("Invalid IPv4 address format")
+        else:
+            self.ip_address = ipv4_address
+
+    @staticmethod
+    def is_valid_ip(ip_address):
+        # Use a regular expression to check the IP address format
+        ip_pattern = re.compile(r'^(\d{1,3}\.){3}\d{1,3}$')
+        if not ip_pattern.match(ip_address):
+            return False
+        # Check the range of each octet
+        octets = ip_address.split('.')
+        for octet in octets:
+            if not (0 <= int(octet) <= 255):
+                return False
+        return True
+
+    @staticmethod
+    def is_valid_subnet_mask(subnet_mask):
+        # Use a regular expression to check the subnet mask format
+        subnet_mask_pattern = re.compile(r'^(\d{1,3}\.){3}\d{1,3}$')
+        if not subnet_mask_pattern.match(subnet_mask):
+            return False
+        return True
+        
+    @staticmethod
+    def is_valid_cidr(cidr):
+        try:
+            cidr_value = int(cidr)
+            return 0 <= cidr_value <= 32
+        except (ValueError, TypeError):
+            return False
+
     def get_broadcast_address(self, subnet_mask): 
         # Convert IP address and subnet mask to lists of integers
         ip_octets = [int(octet) for octet in self.ip_address.split('.')]
@@ -106,11 +139,17 @@ class IPv4Address:
         if subnet_mask and cidr:
             print("Error: Provide either --subnet or --cidr, not both.")
         elif subnet_mask:
-            cidr = self.subnet_mask_to_cidr(subnet_mask)
-            self.get_subnet_network_address(subnet_mask, cidr)
+            if not self.is_valid_subnet_mask(subnet_mask):
+                raise ValueError("Invalid Subnet Mask format.")
+            else:
+                cidr = self.subnet_mask_to_cidr(subnet_mask)
+                self.get_subnet_network_address(subnet_mask, cidr)
         elif cidr:
-            subnet_mask = self.cidr_to_subnet_mask(cidr)
-            self.get_subnet_network_address(subnet_mask, cidr)
+            if not self.is_valid_cidr(cidr):
+                raise ValueError("Invalid CIDR format.")
+            else:
+                subnet_mask = self.cidr_to_subnet_mask(cidr)
+                self.get_subnet_network_address(subnet_mask, cidr)
         else:
             print("Error: Provide either --subnet or --cidr.")
     
