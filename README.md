@@ -14,7 +14,7 @@ IP Subnet Calculator returns a variety of information regarding Internet Protoco
 
 ---
 
-### 🌟 Examples 
+### 🌟 Example Use Cases 
 
 ### IPv4 
 - #### IPv4 Address & Subnet Mask 
