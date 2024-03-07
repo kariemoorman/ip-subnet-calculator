@@ -24,7 +24,6 @@ argparse, re
 
 #### Installation 
 
-
 - Clone or download .zip of `IP-Subnet-Calculator` python package.
 ```
 git clone https://github.com/jestlandia/IP-Subnet-Calculator.git
@@ -40,6 +39,7 @@ cd IP-Subnet-Calculator && python -m venv .venv && source .venv/bin/activate;
 pip install regex argparse;
 ```
 
+#### Use 
 - Execute `IP-Subnet-Calculator` program.
 ```
 ######----- IPv4 Address -----######
