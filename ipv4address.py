@@ -74,14 +74,22 @@ class IPv4Address:
         network_address = '.'.join(map(str, network_octets))
         # Calculate broadcast network
         broadcast_address = self.get_broadcast_address(subnet_mask)
+        # Calculate binary 
+        binary_ip_address = ''.join(format(octet, '08b') for octet in ip_octets)
+        binary_subnet_mask = ''.join(format(octet, '08b') for octet in subnet_octets)
+        binary_network_address = ''.join(format(octet, '08b') for octet in network_octets)
         # Return network_address
-        print(f"\nIPv4 Address: {self.ip_address}")
-        print(f"IP Class: {classification['IP Class']}")
-        print(f"IP Type: {classification['IP Type']}")
-        print(f"CIDR Notation: /{cidr}")
-        print(f"Subnet Mask: {subnet_mask}")
-        print(f"Network Address: {network_address}")
-        print(f"Broadcast Address: {broadcast_address}\n")
+        print(f"\nIPv4 Address: \t\t {self.ip_address}")
+        print(f"IP Class: \t\t {classification['IP Class']}")
+        print(f"IP Type: \t\t {classification['IP Type']}")
+        print(f"CIDR Notation: \t\t /{cidr}")
+        print(f"Subnet Mask: \t\t {subnet_mask}")
+        print(f"Network Address: \t {network_address}")
+        print(f"Broadcast Address: \t {broadcast_address}\n")
+        
+        print(f"Binary IPv4 Address: \t {binary_ip_address}")
+        print(f"Binary Subnet Mask: \t {binary_subnet_mask}")
+        print(f"Binary Network Address:  {binary_network_address}")
 
     def cidr_to_subnet_mask(self, cidr):
         # Calculate the subnet mask using bitwise left shift
@@ -103,16 +111,24 @@ class IPv4Address:
         network_octets = [ip_octets[i] & subnet_octets[i] for i in range(4)]
         # Join octets to form the network address
         network_address = '.'.join(map(str, network_octets))
+        # Calculate binary 
+        binary_ip_address = ''.join(format(octet, '08b') for octet in ip_octets)
+        binary_subnet_mask = ''.join(format(octet, '08b') for octet in subnet_octets)
+        binary_network_address = ''.join(format(octet, '08b') for octet in network_octets)
         # Calculate broadcast network
         broadcast_address = self.get_broadcast_address(subnet_mask_str)
         # Return network_address
-        print(f"\nIPv4 Address: {self.ip_address}")
-        print(f"IP Class: {classification['IP Class']}")
-        print(f"IP Type: {classification['IP Type']}")
-        print(f"CIDR Notation: /{cidr}")
-        print(f"Subnet Mask: {subnet_mask_str}")
-        print(f"Network Address: {network_address}")
-        print(f"Broadcast Address: {broadcast_address}\n")
+        print(f"\nIPv4 Address: \t\t {self.ip_address}")
+        print(f"IP Class: \t\t {classification['IP Class']}")
+        print(f"IP Type: \t\t {classification['IP Type']}")
+        print(f"CIDR Notation: \t\t /{cidr}")
+        print(f"Subnet Mask: \t\t {subnet_mask_str}")
+        print(f"Network Address: \t {network_address}")
+        print(f"Broadcast Address: \t {broadcast_address}\n")
+        
+        print(f"Binary IPv4 Address: \t {binary_ip_address}")
+        print(f"Binary Subnet Mask: \t {binary_subnet_mask}")
+        print(f"Binary Network Address:  {binary_network_address}")
 
     def main(self, cidr, subnet_mask):
         if subnet_mask and cidr:
