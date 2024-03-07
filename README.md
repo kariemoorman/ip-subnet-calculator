@@ -10,7 +10,7 @@
 
 ### 🛡️ About
 
-IP Subnet Calculator returns a variety of information regarding Internet Protocol version 4 (IPv4) networks (e.g., IP class and type, CIDR notation, subnet mask, network address and broadcast address). 
+IP Subnet Calculator returns a variety of information regarding Internet Protocol version 4 (IPv4) networks (e.g., IP class and type, CIDR notation, subnet mask, network address and broadcast address) and Internet Protocol version 6 (IPv6) networks (e.g., IP type, CIDR notation, network address), along with binary notation.
 
 ---
 
@@ -133,6 +133,7 @@ python ipv6address.py 2001:0db8:2231:aaec:0000:0000:4a4a:2100 --cidr 64
 ## Intended Output:
 
 IPv6 Address: 2001:0db8:2231:aaec:0000:0000:4a4a:2100
+IP Type: Public
 CIDR Notation: /64
 Network Address: 2001:0db8:2231:aaec:0000
 
