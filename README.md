@@ -35,6 +35,10 @@ CIDR Notation: /21
 Subnet Mask: 255.255.248.0
 Network Address: 192.168.104.0
 Broadcast Address: 192.168.111.255
+
+Binary IPv4 Address:     11000000101010000110111000001010
+Binary Subnet Mask:      11111111111111111111100000000000
+Binary Network Address:  11000000101010000110100000000000
 ```
 
 - #### IPv4 Address & CIDR
@@ -54,4 +58,8 @@ CIDR Notation: /21
 Subnet Mask: 255.255.248.0
 Network Address: 175.8.104.0
 Broadcast Address: 175.8.111.255
+
+Binary IPv4 Address:     10101111000010000110111000001001
+Binary Subnet Mask:      11111111111111111111100000000000
+Binary Network Address:  10101111000010000110100000000000
 ```
