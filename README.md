@@ -28,14 +28,14 @@ argparse, re
 
 #### Installation 
 
-- Clone or download .zip of `IP-Subnet-Calculator` python package.
+- Clone or download .zip of `ip-subnet-calculator` python package.
 ```
 git clone https://github.com/jestlandia/IP-Subnet-Calculator.git
 ```
 
 - Create a virtual environment inside the `IP-Subnet-Calculator` directory, and activate virtual environment.
 ```
-cd IP-Subnet-Calculator && python -m venv .venv && source .venv/bin/activate;
+cd ip-subnet-calculator && python -m venv .venv && source .venv/bin/activate;
 ```
 
 - Install package dependencies. 
@@ -44,7 +44,7 @@ pip install regex argparse;
 ```
 
 #### Use 
-- Execute `IP-Subnet-Calculator` program.
+- Execute `ip-subnet-calculator` program.
 ```
 ######----- IPv4 Address -----######
 
