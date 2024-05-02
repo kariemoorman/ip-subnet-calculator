@@ -14,7 +14,7 @@
 
 ### 🛡️ About
 
-IP Subnet Calculator returns a variety of information regarding Internet Protocol version 4 (IPv4) networks (e.g., IP class and type, CIDR notation, subnet mask, network address and broadcast address) and Internet Protocol version 6 (IPv6) networks (e.g., IP type, CIDR notation, network address), along with binary notation.
+IP Subnet Calculator returns a variety of information regarding Internet Protocol version 4 (IPv4) networks (e.g., IP class and type, CIDR notation, subnet mask, network address, broadcast address, and available hosts) and Internet Protocol version 6 (IPv6) networks (e.g., IP type, CIDR notation, network address), along with binary notation.
 
 ---
 
