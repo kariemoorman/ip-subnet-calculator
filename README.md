@@ -23,7 +23,7 @@ IP Subnet Calculator returns a variety of information regarding Internet Protoco
 #### Python Package Requirements
 
 ```
-argparse, re
+argparse, regex
 ```
 
 #### Installation 
