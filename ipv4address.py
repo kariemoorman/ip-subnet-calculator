@@ -50,6 +50,10 @@ class IPv4Address:
         broadcast_address = '.'.join(map(str, broadcast_octets))
         return broadcast_address
 
+    def get_available_hosts(self, cidr):
+        hosts = 2**(32 - int(cidr)) - 2
+        return hosts
+    
     def classify_ip_address(self):
         # Convert IP address to a list of integers
         ip_octets = [int(octet) for octet in self.ip_address.split('.')]
@@ -117,6 +121,8 @@ class IPv4Address:
         network_address = '.'.join(map(str, network_octets))
         # Calculate broadcast network
         broadcast_address = self.get_broadcast_address(subnet_mask)
+        # Calculate available hosts
+        available_hosts = self.get_available_hosts(cidr)
         # Calculate binary 
         binary_ip_address = '.'.join('.'.join([binary_octet[i:i+8] for i in range(0, len(binary_octet), 8)]) for binary_octet in [format(int(octet), '08b') for octet in ip_octets])
         binary_subnet_mask = '.'.join('.'.join([binary_octet[i:i+8] for i in range(0, len(binary_octet), 8)]) for binary_octet in [format(int(octet), '08b') for octet in subnet_octets])
@@ -128,7 +134,8 @@ class IPv4Address:
         print(f"CIDR Notation: \t\t /{cidr}")
         print(f"Subnet Mask: \t\t {subnet_mask}")
         print(f"Network Address: \t {network_address}")
-        print(f"Broadcast Address: \t {broadcast_address}\n")
+        print(f"Broadcast Address: \t {broadcast_address}")
+        print(f"Available Hosts: \t {available_hosts}\n")
         
         print(f"Binary IPv4 Address: \t {binary_ip_address}")
         print(f"Binary Subnet Mask: \t {binary_subnet_mask}")
