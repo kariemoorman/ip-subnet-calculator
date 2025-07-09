@@ -30,7 +30,7 @@ argparse, regex
 
 - Clone or download .zip of `ip-subnet-calculator` python package.
 ```
-git clone https://github.com/jestlandia/IP-Subnet-Calculator.git
+git clone https://github.com/kariemoorman/IP-Subnet-Calculator.git
 ```
 
 - Create a virtual environment inside the `IP-Subnet-Calculator` directory, and activate virtual environment.
